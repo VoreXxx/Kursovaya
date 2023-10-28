@@ -1,26 +1,19 @@
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Employee {
+    private static int Counter = 0;
     private final String surname;
     private final String name;
     private final String patronymic;
     public int department;
     public double salary;
-    private static int Counter;
     private final int id;
-//    public static int id;
-//    private static final AtomicInteger COUNTER = new AtomicInteger(1);
-//    public void Counted() {
-//        id = COUNTER.getAndIncrement();
-//    }
 // Constructor
-    public Employee(String surname, String name, String patronymic, int department, int salary) {
+    public Employee(String surname, String name, String patronymic, int department, double salary) {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
         this.department = department;
         this.salary = salary;
-        id = ++Counter;
+        this.id = ++Counter;
     }
 // Getter's
     public String getSurname() {
@@ -53,11 +46,6 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-//    public static void arrAllEmployee(Employee[] arr) {
-//        for (int i = 0; i < 10; i++) {
-//            System.out.println(arr[i]);
-//        }
-//   }
     @Override
     public String toString() {
         return "ID: " + id + " Ф.И.О: " + surname + " " + name + " " + patronymic + " Отдел: " + department + " Зарплата: " + salary;
